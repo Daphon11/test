@@ -1,44 +1,47 @@
 @extends('layouts.auth')
 
 @section('login')
-
-<section>
-    <div class="container-fluid">
+<div class="login-box">
+  
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <div class="login-logo">
+      <a href="{{ url('/') }}"><b>Bakmi</b>Jowo</a>
+    </div>
+    <form action="{{ route('login') }}" method="post">
+      @csrf
+      <div class="form-group has-feedback @error('email') has-error @enderror">
+        <input type="email" name="email" class="form-control" placeholder="Email" required value="{{ old('email ') }}">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        @error('email')
+        <span class="help-block">{{ $message }}</span>
+        @enderror
+      </div>
+      <div class="form-group has-feedback @error('password') has-error @enderror">
+        <input type="password" name="password" class="form-control" placeholder="Password" required >
+        @error('password')
+        <span class="help-block">{{ $message }}</span>
+        @enderror
+      </div>
       <div class="row">
-        <div class="col-xl-7"><img class="bg-img-cover bg-center" src="../assets/images/login/2.jpg" alt="looginpage"></div>
-        <div class="col-xl-5 p-0">
-          <div class="login-card">
-            <form class="theme-form login-form" action="{{ route('login') }}">
-              @csrf
-              <h4>Login</h4>
-              <h6>Selamat Datang! Masukkan Akun Anda</h6>
-              <div class="form-group">
-                <label>Email</label>
-                <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
-                  <input name="email" class="form-control" type="email" required="" placeholder="Test@gmail.com">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Password</label>
-                <div class="input-group"><span class="input-group-text"><i class="icon-lock"></i></span>
-                  <input class="form-control" name="password" type="password" required="" placeholder="*********">
-                  <div class="show-hide"><span class="show">                         </span></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="checkbox">
-                  <input id="checkbox1" type="checkbox">
-                  <label class="text-muted" for="checkbox1">Remember password</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
-              </div>
-            </form>
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Remember Me
+            </label>
           </div>
         </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        </div>
+        <!-- /.col -->
       </div>
-    </div>
-  </section>
+    </form>
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
 
 @endsection

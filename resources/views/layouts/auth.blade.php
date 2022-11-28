@@ -1,70 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="viho admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, viho admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <title>Bakmi Jowo | Log In</title>
-    <!-- Google font-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="../../css2.css?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
-    <link href="../../css2-1.css?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
-    <link href="../../css2-2.css?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
-    <!-- Font Awesome-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/fontawesome.css">
-    <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/icofont.css">
-    <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/themify.css">
-    <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/flag-icon.css">
-    <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/feather-icon.css">
-    <!-- Plugins css start-->
-    <!-- Plugins css Ends-->
-    <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-    <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-    <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
-    <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
-  </head>
-  <body>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="https://laravel.pixelstrap.com/viho/assets/images/favicon.png" type="image/x-icon">
+  <title>{{ config ('app.name') }}  | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{ asset('AdminLTE-2/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('AdminLTE-2/bower_components/font-awesome/css/font-awesome.min.css') }}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{ asset('AdminLTE-2/bower_components/Ionicons/css/ionicons.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('AdminLTE-2/dist/css/AdminLTE.min.css') }}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{ asset('AdminLTE-2/plugins/iCheck/square/blue.css') }}">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
 
 @yield('login')
 
-    <!-- Loader starts-->
-    <div class="loader-wrapper">
-      <div class="theme-loader">    
-        <div class="loader-p"></div>
-      </div>
-    </div>
-    <!-- Loader ends-->
-    <!-- page-wrapper Start-->
-   @yield('login')
-    <!-- page-wrapper end-->
-    <!-- latest jquery-->
-    <script src="../assets/js/jquery-3.5.1.min.js"></script>
-    <!-- feather icon js-->
-    <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
-    <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
-    <!-- Sidebar jquery-->
-    <script src="../assets/js/sidebar-menu.js"></script>
-    <script src="../assets/js/config.js"></script>
-    <!-- Bootstrap js-->
-    <script src="../assets/js/bootstrap/popper.min.js"></script>
-    <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
-    <!-- Plugins JS start-->
-    <!-- Plugins JS Ends-->
-    <!-- Theme js-->
-    <script src="../assets/js/script.js"></script>
-    <!-- login js-->
-    <!-- Plugin used-->
-  </body>
+<!-- jQuery 3 -->
+<script src="{{ asset('AdminLTE-2/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{ asset('AdminLTE-2/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<!-- iCheck -->
+<script src="{{ asset('AdminLTE-2/plugins/iCheck/icheck.min.js') }}"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' /* optional */
+    });
+  });
+</script>
+</body>
 </html>
