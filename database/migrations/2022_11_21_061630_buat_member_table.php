@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('alamat')->nullable();
             $table->string('telepon');
             $table->timestamps();
-        )};
+    });
     }
 
     /**

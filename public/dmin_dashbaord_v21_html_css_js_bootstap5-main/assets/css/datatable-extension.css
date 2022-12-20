@@ -996,7 +996,10 @@ table.dataTable tr.selected th.select-checkbox:after {
   margin-top: -11px;
   margin-left: -4px;
   text-align: center;
-  text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9; }
+  text-shadow: 1px 1px #B0BED9,
+ -1px -1px #B0BED9,
+ 1px -1px #B0BED9,
+ -1px 1px #B0BED9; }
 
 div.dataTables_wrapper span.select-info,
 div.dataTables_wrapper span.select-item {
@@ -1244,4 +1247,3 @@ div.DTS {
     display: none; }
 
 /*scroller css*/
-/*# sourceMappingURL=datatable-extension.css.map */
